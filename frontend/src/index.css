@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-800;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 min-h-screen;
+    background-attachment: fixed;
+    transition: background-color 0.3s ease;
+  }
+
+  html.light body {
+    @apply bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-slate-900;
+    background-attachment: fixed;
+  }
+
+  html.light * {
+    @apply border-slate-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-500 hover:from-blue-500 hover:via-cyan-400 hover:to-blue-400 text-white font-semibold py-2 px-4 md:py-2.5 md:px-6 rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 text-sm md:text-base;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700/80 text-white font-medium py-2 px-3 md:py-2.5 md:px-6 rounded-xl transition-all duration-200 border border-slate-700/50 hover:border-slate-600 text-sm md:text-base;
+  }
+
+  html.light .btn-secondary {
+    @apply bg-white hover:bg-blue-50 border-slate-300 text-slate-700 hover:border-blue-400 shadow-sm hover:shadow-md;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200;
+  }
+
+  html.light .input-field {
+    @apply bg-white border-slate-300 text-slate-900 placeholder-slate-400 focus:ring-blue-500/30 focus:border-blue-500 shadow-sm;
+  }
+
+  .card {
+    @apply bg-slate-800/40 backdrop-blur-md rounded-2xl p-6 border border-slate-700/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300;
+  }
+
+  html.light .card {
+    @apply bg-white/95 backdrop-blur-md border-slate-200 shadow-lg shadow-blue-100/50 hover:shadow-xl hover:shadow-blue-200/50;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  html.light .glass {
+    @apply bg-white/95 backdrop-blur-xl border-slate-200 shadow-md;
+  }
+
+  html.light h1, html.light h2, html.light h3 {
+    @apply text-slate-900;
+  }
+
+  html.light .text-white {
+    @apply text-slate-900;
+  }
+
+  html.light .text-slate-300 {
+    @apply text-slate-600;
+  }
+
+  html.light .text-slate-400 {
+    @apply text-slate-500;
+  }
+
+  html.light .text-slate-200 {
+    @apply text-slate-700;
+  }
+
+  html.light .text-slate-100 {
+    @apply text-slate-800;
+  }
+
+  html.light .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
+  }
+
+  /* Task Card Light Mode */
+  html.light .task-card-light {
+    @apply bg-white hover:bg-blue-50/50 border-slate-200 hover:border-blue-300 shadow-md hover:shadow-lg;
+  }
+
+  html.light .task-card-light h3 {
+    @apply text-slate-900;
+  }
+
+  html.light .task-card-light p {
+    @apply text-slate-600;
+  }
+
+  html.light .task-card-light .text-slate-300 {
+    @apply text-slate-600;
+  }
+
+  html.light .task-card-light .text-slate-400 {
+    @apply text-slate-500;
+  }
+
+  html.light .task-card-light .bg-slate-800\/40 {
+    @apply bg-blue-50;
+  }
+
+  html.light .task-card-light .border-slate-700\/30 {
+    @apply border-blue-200;
+  }
+
+  html.light .task-card-light .bg-slate-700\/50 {
+    @apply bg-blue-100 border border-blue-200;
+  }
+
+  /* Priority badges */
+  .priority-badge {
+    @apply text-slate-400;
+  }
+
+  .priority-medium {
+    @apply text-cyan-400;
+  }
+
+  .priority-high {
+    @apply text-red-400;
+  }
+
+  html.light .priority-badge {
+    @apply text-slate-500;
+  }
+
+  html.light .priority-medium {
+    @apply text-blue-600;
+  }
+
+  html.light .priority-high {
+    @apply text-red-600;
+  }
+
+  /* Category badges */
+  .category-badge {
+    @apply bg-blue-500/20 text-blue-300 border-blue-500/50;
+  }
+
+  html.light .category-badge {
+    @apply bg-blue-100 text-blue-700 border-blue-300;
+  }
+
+  html.light .category-FREELANCING {
+    @apply bg-purple-100 text-purple-700 border-purple-300;
+  }
+
+  html.light .category-GYM {
+    @apply bg-green-100 text-green-700 border-green-300;
+  }
+
+  html.light .category-READING {
+    @apply bg-yellow-100 text-yellow-700 border-yellow-300;
+  }
+
+  html.light .category-CLASS {
+    @apply bg-orange-100 text-orange-700 border-orange-300;
+  }
+
+  html.light .category-REST {
+    @apply bg-pink-100 text-pink-700 border-pink-300;
+  }
+
+  html.light .category-MISC {
+    @apply bg-gray-100 text-gray-700 border-gray-300;
+  }
+
+  /* Time badges */
+  html.light .time-badge {
+    @apply text-slate-600 bg-blue-100 border border-blue-200;
+  }
+
+  /* Header light mode */
+  html.light .header-light {
+    @apply border-slate-200;
+  }
+
+  html.light .header-button {
+    @apply text-slate-600 hover:bg-blue-50 hover:text-blue-700;
+  }
+
+  html.light .nav-link-inactive {
+    @apply text-slate-600 hover:bg-blue-50 hover:text-blue-700;
+  }
+
+  html.light .nav-link-active {
+    @apply from-blue-500 to-indigo-500 shadow-blue-200/50;
+  }
+
+  html.light .user-info {
+    @apply bg-blue-50/50 border-blue-200;
+  }
+
+  html.light .user-avatar {
+    @apply from-blue-500 to-indigo-500;
+  }
+
+  html.light .user-name {
+    @apply text-slate-700;
+  }
+
+  /* Mobile nav light mode */
+  html.light .mobile-nav {
+    @apply border-slate-200;
+  }
+
+  html.light .mobile-nav-link-inactive {
+    @apply text-slate-500 hover:text-blue-600;
+  }
+
+  html.light .mobile-nav-link-active {
+    @apply from-blue-100 to-transparent text-blue-600;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
